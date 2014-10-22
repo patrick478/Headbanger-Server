@@ -217,3 +217,251 @@ Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-10-22 10:32:20 +13
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 10:32:20 +1300
+  [1m[36m (292.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (44.9ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20141022035150)
+  [1m[35m (2.3ms)[0m  BEGIN
+  [1m[36m (179.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "facebook_id" character varying(255), "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141022035150"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSongs (20141022035154)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (14.5ms)[0m  [1mCREATE TABLE "songs" ("id" serial primary key, "title" character varying(255), "artist" character varying(255), "album" character varying(255), "artwork_url" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141022035154"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSongListens (20141022035159)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSongListens (20141022035159)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (7.7ms)[0m  [1mCREATE TABLE "song_listens" ("id" serial primary key, "user_id" integer, "song_id" integer, "nods" integer, "location" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141022035159"]]
+  [1m[36m (64.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-22 17:11:25 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 885ms (Views: 872.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:26 +1300
+
+
+Started GET "/assets/song_listens.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:26 +1300
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/song_listens.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:27 +1300
+
+
+Started GET "/users" for 127.0.0.1 at 2014-10-22 17:11:31 +1300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:32 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:32 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:32 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:32 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:32 +1300
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-10-22 17:11:33 +1300
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (23.5ms)
+  Rendered users/new.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 109ms (Views: 105.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-22 17:11:35 +1300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5iVTepo/zOOdTsmFAZW3UVRp/t49u2Fqan28g1AXlmg=", "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.4ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-10-22 04:11:35.438667"], ["updated_at", "2014-10-22 04:11:35.438667"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/users/1
+Completed 302 Found in 19ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-10-22 17:11:35 +1300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 84ms (Views: 79.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:35 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:35 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:35 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:35 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:35 +1300
+
+
+Started GET "/users" for 127.0.0.1 at 2014-10-22 17:11:37 +1300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 63ms (Views: 62.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-10-22 17:11:38 +1300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/song_listens.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/song_listens.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:39 +1300
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5iVTepo/zOOdTsmFAZW3UVRp/t49u2Fqan28g1AXlmg=", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/song_listens.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/song_listens.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-22 17:11:41 +1300
