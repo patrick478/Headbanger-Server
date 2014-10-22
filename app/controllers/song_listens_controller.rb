@@ -19,9 +19,11 @@ class SongListensController < ApplicationController
       @song_listen.song = Song.find_by(title: params[:title], artist: params[:artist], album: params[:album]).first
     else
       @song_listen.song = Song.create(title: params[:title], artist: params[:artist], album: params[:album])
+    end
 
     if User.find_by(facebook_id: params[:facebook_id]).first.present?
       @song_listen.user = User.find_by(facebook_id: params[:facebook_id]).first
+    end
 
   end
 
